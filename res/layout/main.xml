@@ -10,7 +10,6 @@
             android:layout_width="fill_parent"
             android:layout_height="0dip"
             android:layout_weight="49"
-            android:text="Some Text"
             />
     <Button android:id="@+id/talk_button"
             android:layout_width="fill_parent"
