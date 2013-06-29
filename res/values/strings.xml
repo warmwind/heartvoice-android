@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">心声</string>
     <string name="click_to_talk">点此对我说话</string>
+    <string name="appid">appid=51cea893</string>
 </resources>
