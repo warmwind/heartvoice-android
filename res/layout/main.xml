@@ -18,13 +18,13 @@
         <Button android:id="@+id/talk_button"
                 android:layout_width="0dip"
                 android:layout_height="fill_parent"
-                android:layout_weight="50"
+                android:layout_weight="70"
                 android:text="@string/click_to_talk"
                 />
         <Button android:id="@+id/read_button"
                 android:layout_width="0dip"
                 android:layout_height="fill_parent"
-                android:layout_weight="50"
+                android:layout_weight="30"
                 android:text="@string/click_to_read"
                 />
     </LinearLayout>
