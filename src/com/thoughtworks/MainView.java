@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 
 public class MainView extends LinearLayout {
     EditText editText;
-    Button talkButton;
+    Button talkButton, readButton;
 
     public MainView(Context context) {
         super(context);
@@ -19,15 +19,18 @@ public class MainView extends LinearLayout {
         li.inflate(R.layout.main, this, true);
         editText = (EditText) findViewById(R.id.word);
         talkButton = (Button) findViewById(R.id.talk_button);
+        readButton = (Button) findViewById(R.id.read_button);
 
         talkButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (editText.getText().toString().equals("")) {
-                    new RecognizerDialogInitializer(getContext(), editText).show();
-                } else {
-                    new SynthesizerDialogInitializer(getContext(), editText).show();
-                }
+                new RecognizerDialogInitializer(getContext(), editText).show();
+            }
+        });
+        readButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new SynthesizerDialogInitializer(getContext(), editText).show();
             }
         });
     }

@@ -11,11 +11,22 @@
             android:layout_height="0dip"
             android:layout_weight="49"
             />
-    <Button android:id="@+id/talk_button"
-            android:layout_width="fill_parent"
-            android:layout_height="0dip"
-            android:layout_weight="49"
-            android:text="@string/click_to_talk"
-            />
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="0dip"
+                  android:layout_weight="49"
+            >
+        <Button android:id="@+id/talk_button"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="50"
+                android:text="@string/click_to_talk"
+                />
+        <Button android:id="@+id/read_button"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="50"
+                android:text="@string/click_to_read"
+                />
+    </LinearLayout>
 </LinearLayout>
 

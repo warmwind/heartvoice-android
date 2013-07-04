@@ -2,3 +2,4 @@ local.properties
 out/
 gen
 heartvoice-android.iml
+.idea/
