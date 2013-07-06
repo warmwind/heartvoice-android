@@ -39,4 +39,22 @@ public class MainView extends LinearLayout {
         super(context, attrs);
     }
 
+    @Override
+    protected void onSizeChanged(int w, final int h, int oldw, final int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        android.os.Handler handler = getHandler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                if (h > oldh && oldh > 0) {
+                    editText.setTextSize(50);
+                    findViewById(R.id.actions).setVisibility(VISIBLE);
+                } else if (h < oldh) {
+                    editText.setTextSize(20);
+                    findViewById(R.id.actions).setVisibility(GONE);
+                }
+            }
+        });
+    }
+
 }
