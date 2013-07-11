@@ -6,4 +6,6 @@
     <string name="appid">appid=51ce9dca</string>
     <string name="useful_expressions">常用语</string>
     <string name="settings">设置</string>
+    <string name="default_text">默认文字</string>
+    <string name="summary_default_text_preference">设置您在主界面的默认显示文字</string>
 </resources>

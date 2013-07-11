@@ -1,6 +1,8 @@
 package com.thoughtworks;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +35,8 @@ public class MainView extends LinearLayout {
                 new SynthesizerDialogInitializer(getContext(), editText).show();
             }
         });
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        editText.setText(preferences.getString(SettingsActivity.KEY_DEFAULT_TEXT, ""));
     }
 
     public MainView(Context context, AttributeSet attrs) {
