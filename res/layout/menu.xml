@@ -2,4 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/useful_expressions"
           android:title="从常用语中选择" />
+    <item android:id="@+id/settings"
+          android:title="设置"  />
 </menu>

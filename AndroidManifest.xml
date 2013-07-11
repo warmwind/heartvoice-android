@@ -16,6 +16,9 @@
         <activity android:name=".UsefulExpressionListActivity"
                   android:label="@string/useful_expressions">
         </activity>
+        <activity android:name=".SettingsActivity"
+                  android:label="@string/settings">
+        </activity>
     </application>
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
