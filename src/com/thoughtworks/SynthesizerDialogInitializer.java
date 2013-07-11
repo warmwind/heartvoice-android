@@ -1,6 +1,8 @@
 package com.thoughtworks;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.widget.EditText;
 import com.iflytek.speech.SpeechError;
 import com.iflytek.speech.SynthesizerPlayer;
@@ -40,9 +42,11 @@ public class SynthesizerDialogInitializer {
             public void onEnd(SpeechError error) {
             }
         };
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        String voice = sp.getString("voice", "xiaoyan");
 
         SynthesizerPlayer player = SynthesizerPlayer.createSynthesizerPlayer(context, context.getString(R.string.appid));
-        player.setVoiceName("xiaoyan");
+        player.setVoiceName(voice);
         player.playText(editText.getText().toString(), "tts_buffer_time=2000", synbgListener);
     }
 

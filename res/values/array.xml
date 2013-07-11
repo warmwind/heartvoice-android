@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="voiceArray">
+        <item>男声</item>
+        <item>女声</item>
+    </string-array>
+    <string-array name="voiceValues">
+        <item>xiaoyu</item>
+        <item>xiaoyan</item>
+    </string-array>
+</resources>

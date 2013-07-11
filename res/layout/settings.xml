@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent">
 
     <EditTextPreference
             android:key="default_text_preference"
             android:title="@string/default_text"
             android:summary="@string/summary_default_text_preference"/>
+
+    <ListPreference android:title="声音设置"
+                    android:summary="选择不同性别的声音"
+                    android:key="voice"
+                    android:defaultValue="1"
+                    android:entries="@array/voiceArray"
+                    android:entryValues="@array/voiceValues"/>
 
 </PreferenceScreen>
