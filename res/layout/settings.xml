@@ -11,7 +11,7 @@
 
     <ListPreference android:title="声音设置"
                     android:summary="选择不同性别的声音"
-                    android:key="voice"
+                    android:key="default_voice_preference"
                     android:defaultValue="1"
                     android:entries="@array/voiceArray"
                     android:entryValues="@array/voiceValues"/>

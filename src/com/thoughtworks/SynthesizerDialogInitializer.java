@@ -43,7 +43,7 @@ public class SynthesizerDialogInitializer {
             }
         };
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        String voice = sp.getString("voice", "xiaoyan");
+        String voice = sp.getString(SettingsActivity.KEY_DEFAULT_VOICE, "xiaoyan");
 
         SynthesizerPlayer player = SynthesizerPlayer.createSynthesizerPlayer(context, context.getString(R.string.appid));
         player.setVoiceName(voice);

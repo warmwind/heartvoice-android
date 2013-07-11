@@ -3,9 +3,13 @@
     <string-array name="voiceArray">
         <item>男声</item>
         <item>女声</item>
+        <item>陕西话</item>
+        <item>粤语</item>
     </string-array>
     <string-array name="voiceValues">
         <item>xiaoyu</item>
         <item>xiaoyan</item>
+        <item>vixying</item>
+        <item>vixm</item>
     </string-array>
 </resources>

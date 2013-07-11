@@ -7,6 +7,7 @@ import android.preference.PreferenceActivity;
 
 public class SettingsActivity extends PreferenceActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     public static final String KEY_DEFAULT_TEXT = "default_text_preference";
+    public static final String KEY_DEFAULT_VOICE = "default_voice_preference";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +20,14 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        Preference preference = findPreference(key);
+        String back = "";
         if (key.equals(KEY_DEFAULT_TEXT)) {
-            Preference preference = findPreference(key);
-            preference.setSummary(sharedPreferences.getString(key, ""));
+            back = sharedPreferences.getString(key, "");
+        } else if (key.equals(KEY_DEFAULT_TEXT)) {
+            back = sharedPreferences.getString(key, "");
         }
+        preference.setSummary(back);
     }
 
     @Override
