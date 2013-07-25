@@ -10,4 +10,5 @@
     <string name="summary_default_text_preference">设置您在主界面的默认显示文字</string>
     <string name="expressions_actions">常用语操作</string>
     <string name="save_expression">保存</string>
+    <string name="delete">删除</string>
 </resources>

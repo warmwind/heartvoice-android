@@ -4,14 +4,13 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import static android.widget.AdapterView.*;
 
 public class UsefulExpressionListActivity extends ListActivity {
     private static final int CREATE_EXPRESSION = 1;
@@ -30,7 +29,7 @@ public class UsefulExpressionListActivity extends ListActivity {
         ListView listView = getListView();
         listView.setTextFilterEnabled(true);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 Intent resultIntent = new Intent();
@@ -39,6 +38,8 @@ public class UsefulExpressionListActivity extends ListActivity {
                 finish();
             }
         });
+        registerForContextMenu(listView);
+
     }
 
     @Override
@@ -81,6 +82,28 @@ public class UsefulExpressionListActivity extends ListActivity {
                 break;
             }
         }
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()){
+            case R.id.delete_expressions:
+                String expression = adapter.getItem(info.position);
+                expressionDBHelper.deleteExpression(expression);
+                adapter.remove(expression);
+                adapter.notifyDataSetChanged();
+                return true;
+        }
+        return super.onContextItemSelected(item);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.expression_context_menu, menu);
     }
 
 
