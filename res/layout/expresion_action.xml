@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <EditText
+            android:id="@+id/expression_edit_text"
+            android:gravity="top"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:textSize="50dip"
+            android:layout_weight="8"
+
+            android:inputType="textMultiLine"
+            />
+    <Button android:id="@+id/save_expression_button"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="2"
+            android:text="@string/save_expression"
+            />
+
+</LinearLayout>
+
