@@ -11,4 +11,6 @@
     <string name="expressions_actions">常用语操作</string>
     <string name="save_expression">保存</string>
     <string name="delete">删除</string>
+    <string name="feedback_title">意见反馈</string>
+    <string name="feedback_link">https://jinshuju.net/f/e14x0z</string>
 </resources>
