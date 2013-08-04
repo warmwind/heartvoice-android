@@ -67,7 +67,6 @@ public class ExpressionDBHelper extends SQLiteOpenHelper {
             do {
                 String expression = cursor.getString(cursor.getColumnIndex(COLUMN_NAME));
                 if (!expression.trim().equals("")) {
-                    System.out.println("----------expression" + expression);
                     results.add(expression);
                 }
             } while (cursor.moveToNext());

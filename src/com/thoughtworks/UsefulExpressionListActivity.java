@@ -16,6 +16,7 @@ public class UsefulExpressionListActivity extends ListActivity {
     private static final int CREATE_EXPRESSION = 1;
 
     public static final String EXPRESSION_VALUE = "expression_value";
+    public static final String ADD_NEW_EXPRESSION = "+ 添加常用语";
     private ArrayAdapter<String> adapter;
     private ExpressionDBHelper expressionDBHelper;
 
@@ -24,70 +25,21 @@ public class UsefulExpressionListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
 
         expressionDBHelper = new ExpressionDBHelper(getApplicationContext());
-        adapter = new ArrayAdapter<String>(this, R.layout.list_expressions);
+        adapter = new ExpressionAdapter(this, R.layout.list_expressions);
         setListAdapter(adapter);
-        ListView listView = getListView();
-        listView.setTextFilterEnabled(true);
-
-        listView.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra(EXPRESSION_VALUE, ((TextView) view).getText());
-                setResult(Activity.RESULT_OK, resultIntent);
-                finish();
-            }
-        });
-        registerForContextMenu(listView);
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.layout.expressions_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.create_expression:
-                Intent i = new Intent(this.getApplicationContext(), UsefulExpressionActionActivity.class);
-                startActivityForResult(i, CREATE_EXPRESSION);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        initListView();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        adapter.clear();
-        for (String expression : expressionDBHelper.getAllExpressions()) {
-            adapter.add(expression);
-        }
-        adapter.notifyDataSetChanged();
-
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case (CREATE_EXPRESSION): {
-                break;
-            }
-        }
+        refreshExpressions();
     }
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.delete_expressions:
                 String expression = adapter.getItem(info.position);
                 expressionDBHelper.deleteExpression(expression);
@@ -106,5 +58,33 @@ public class UsefulExpressionListActivity extends ListActivity {
         inflater.inflate(R.menu.expression_context_menu, menu);
     }
 
+    private void refreshExpressions() {
+        adapter.clear();
+        adapter.add(ADD_NEW_EXPRESSION);
+        for (String expression : expressionDBHelper.getAllExpressions()) {
+            adapter.add(expression);
+        }
+        adapter.notifyDataSetChanged();
+    }
 
+    private void initListView() {
+        ListView listView = getListView();
+        listView.setTextFilterEnabled(true);
+
+        listView.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                if (position == 0) {
+                    Intent i = new Intent(getApplicationContext(), UsefulExpressionActionActivity.class);
+                    startActivityForResult(i, CREATE_EXPRESSION);
+                } else {
+                    Intent resultIntent = new Intent();
+                    resultIntent.putExtra(EXPRESSION_VALUE, ((TextView) view).getText());
+                    setResult(Activity.RESULT_OK, resultIntent);
+                    finish();
+                }
+            }
+        });
+        registerForContextMenu(listView);
+    }
 }
