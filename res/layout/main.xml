@@ -9,10 +9,30 @@
             android:gravity="top"
             android:layout_width="fill_parent"
             android:layout_height="0dip"
-            android:layout_weight="7"
+            android:layout_weight="6"
             android:textSize="50dip"
             android:inputType="textMultiLine"
             />
+    <LinearLayout android:id="@+id/content_actions"
+                  android:layout_width="fill_parent"
+                  android:layout_height="0dip"
+                  android:layout_weight="1"
+            >
+        <Button android:id="@+id/clear_button"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:text="@string/clear"
+                android:onClick="clear"
+                />
+        <Button android:id="@+id/select_expression_button"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:text="@string/select_expression_button"
+                android:onClick="goToExpressionList"
+                />
+    </LinearLayout>
     <LinearLayout android:id="@+id/actions"
                   android:layout_width="fill_parent"
                   android:layout_height="0dip"

@@ -61,4 +61,7 @@ public class MainView extends LinearLayout {
         });
     }
 
+    public void clear() {
+        editText.setText("");
+    }
 }

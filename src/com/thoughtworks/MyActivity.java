@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MyActivity extends Activity {
     private static final int EXPRESSIONS = 1;
@@ -33,10 +34,6 @@ public class MyActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent i;
         switch (item.getItemId()) {
-            case R.id.useful_expressions:
-                i = new Intent(this.getApplicationContext(), UsefulExpressionListActivity.class);
-                startActivityForResult(i, EXPRESSIONS);
-                return true;
             case R.id.settings:
                 i = new Intent(this.getApplicationContext(), SettingsActivity.class);
                 startActivityForResult(i, SETTINGS);
@@ -57,6 +54,16 @@ public class MyActivity extends Activity {
                 }
                 break;
         }
+    }
+
+    public void clear(View view){
+      mainView.clear();
+    }
+
+    public void goToExpressionList(View view){
+        Intent intent = new Intent(this.getApplicationContext(), UsefulExpressionListActivity.class);
+        startActivityForResult(intent, EXPRESSIONS);
+
     }
 
 }
