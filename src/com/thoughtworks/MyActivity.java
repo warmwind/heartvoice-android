@@ -24,26 +24,6 @@ public class MyActivity extends Activity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.layout.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent i;
-        switch (item.getItemId()) {
-            case R.id.settings:
-                i = new Intent(this.getApplicationContext(), SettingsActivity.class);
-                startActivityForResult(i, SETTINGS);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
@@ -63,6 +43,12 @@ public class MyActivity extends Activity {
     public void goToExpressionList(View view){
         Intent intent = new Intent(this.getApplicationContext(), UsefulExpressionListActivity.class);
         startActivityForResult(intent, EXPRESSIONS);
+
+    }
+
+    public void goToSettings(View view){
+        Intent intent = new Intent(this.getApplicationContext(), SettingsActivity.class);
+        startActivityForResult(intent, SETTINGS);
 
     }
 
