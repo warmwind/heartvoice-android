@@ -24,8 +24,6 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
         String back = "";
         if (key.equals(KEY_DEFAULT_TEXT)) {
             back = sharedPreferences.getString(key, "");
-        } else if (key.equals(KEY_DEFAULT_TEXT)) {
-            back = sharedPreferences.getString(key, "");
         }
         preference.setSummary(back);
     }
