@@ -65,6 +65,7 @@ public class SynthesizerDialogInitializer {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 
         alertDialogBuilder.setMessage("正在准备...")
+                .setCancelable(false)
                 .setPositiveButton("取消", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         if(player != null){
