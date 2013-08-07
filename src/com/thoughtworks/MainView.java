@@ -14,7 +14,7 @@ public class MainView extends LinearLayout {
     EditText editText;
     Button talkButton, readButton;
 
-    public MainView(Context context) {
+    public MainView(final Context context) {
         super(context);
         String infService = Context.LAYOUT_INFLATER_SERVICE;
         LayoutInflater li = (LayoutInflater) getContext().getSystemService(infService);
@@ -32,7 +32,7 @@ public class MainView extends LinearLayout {
         readButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                new SynthesizerDialogInitializer(getContext(), editText).show();
+                new SynthesizerDialogInitializer(context, editText).show();
             }
         });
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
