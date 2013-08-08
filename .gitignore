@@ -3,3 +3,5 @@ out/
 gen
 heartvoice-android.iml
 .idea/
+.DS_Store
+libs/.DS_Store

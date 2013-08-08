@@ -24,6 +24,8 @@
                   android:label="@string/expressions_actions"
                   android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
+        <meta-data android:value="52032dcf56240b0e83004149" android:name="UMENG_APPKEY"></meta-data>
+        <meta-data android:value="wandoujia" android:name="UMENG_CHANNEL"/>
     </application>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission android:name="android.permission.INTERNET"/>
