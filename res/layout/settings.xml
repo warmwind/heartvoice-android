@@ -9,8 +9,8 @@
             android:title="@string/default_text"
             android:summary="@string/summary_default_text_preference"/>
 
-    <ListPreference android:title="声音设置"
-                    android:summary="选择不同性别的声音"
+    <ListPreference android:title="@string/voice_title"
+                    android:summary="@string/voice_summary"
                     android:key="default_voice_preference"
                     android:defaultValue="1"
                     android:entries="@array/voiceArray"

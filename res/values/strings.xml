@@ -15,4 +15,6 @@
     <string name="feedback_link">https://jinshuju.net/f/e14x0z</string>
     <string name="clear">清空</string>
     <string name="select_expression_button">+ 插入常用语</string>
+    <string name="voice_title">朗读语音设置</string>
+    <string name="voice_summary">选择合适的语音来朗读文字</string>
 </resources>
