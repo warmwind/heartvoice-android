@@ -7,7 +7,8 @@
     <EditTextPreference
             android:key="default_text_preference"
             android:title="@string/default_text"
-            android:summary="@string/summary_default_text_preference"/>
+            android:defaultValue="@string/default_text_value"
+            />
 
     <ListPreference android:title="@string/voice_title"
                     android:summary="@string/voice_summary"

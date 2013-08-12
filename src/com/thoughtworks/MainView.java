@@ -6,6 +6,8 @@ import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -13,6 +15,7 @@ import android.widget.LinearLayout;
 public class MainView extends LinearLayout {
     EditText editText;
     Button talkButton, readButton;
+    Context mContext;
 
     public MainView(final Context context) {
         super(context);
@@ -36,7 +39,8 @@ public class MainView extends LinearLayout {
             }
         });
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        editText.setText(preferences.getString(SettingsActivity.KEY_DEFAULT_TEXT, ""));
+        editText.setText(preferences.getString(SettingsActivity.KEY_DEFAULT_TEXT, context.getString(R.string.default_text_value)));
+        mContext =  context;
     }
 
     public MainView(Context context, AttributeSet attrs) {
@@ -65,5 +69,9 @@ public class MainView extends LinearLayout {
 
     public void clear() {
         editText.setText("");
+        InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);
+        findViewById(R.id.actions).setVisibility(GONE);
+        findViewById(R.id.content_actions).setVisibility(GONE);
     }
 }

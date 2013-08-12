@@ -31,6 +31,11 @@ public class ExpressionDBHelper extends SQLiteOpenHelper {
         addExpressionWithDb("请帮我个忙好吗", db);
         addExpressionWithDb("您能给我们拍张照片吗", db);
         addExpressionWithDb("请问这里是什么地方", db);
+        addExpressionWithDb("你在做什么？", db);
+        addExpressionWithDb("请把菜单拿来吧。", db);
+        addExpressionWithDb("请把那个给我看一下。", db);
+        addExpressionWithDb("这个多少钱？", db);
+        addExpressionWithDb("请问_怎么走？", db);
         addExpressionWithDb("救命啊，救命啊", db);
     }
 

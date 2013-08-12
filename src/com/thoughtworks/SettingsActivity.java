@@ -18,7 +18,7 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
 
         addPreferencesFromResource(R.layout.settings);
         Preference default_text_preference = findPreference(KEY_DEFAULT_TEXT);
-        default_text_preference.setSummary(getPreferenceManager().getSharedPreferences().getString(KEY_DEFAULT_TEXT, getString(R.string.summary_default_text_preference)));
+        default_text_preference.setSummary(getPreferenceManager().getSharedPreferences().getString(KEY_DEFAULT_TEXT, getString(R.string.default_text_value)));
         ListPreference listPref = (ListPreference) findPreference(KEY_DEFAULT_VOICE);
         if(listPref.getEntry() != null){
             listPref.setSummary(listPref.getEntry());
