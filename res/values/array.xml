@@ -7,12 +7,6 @@
         <item>青年女声(英文)</item>
         <item>青年男声(英文)</item>
         <item>青年女声(粤语)</item>
-        <item>青年女声(台湾话)</item>
-        <item>青年女声(四川话)</item>
-        <item>青年女声(东北话)</item>
-        <item>青年男声(河南话)</item>
-        <item>青年男声(湖南话)</item>
-        <item>青年女声(陕西话)</item>
         <item>童年男声(普通话)</item>
         <item>童年女声(普通话)</item>
     </string-array>
@@ -23,11 +17,6 @@
         <item>vimary</item>
         <item>henry</item>
         <item>vixm</item>
-        <item>vixl</item>
-        <item>vixr</item>
-        <item>vixyun</item>
-        <item>vixqa</item>
-        <item>vixying</item>
         <item>vixx</item>
         <item>vinn</item>
     </string-array>
