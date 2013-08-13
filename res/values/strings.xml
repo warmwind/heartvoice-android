@@ -17,4 +17,10 @@
     <string name="select_expression_button">+ 插入常用语</string>
     <string name="voice_title">朗读语音设置</string>
     <string name="voice_summary">选择合适的语音来朗读文字</string>
+    <string name="about_us">关于我们</string>
+    <string name="about_us_intro">
+        在Thoughtworks公司的3大支柱中，“社会与经济公正”是最有特色的一个。我们希望每个人都有平等的机会生活在这个世界上。所以，我们想用最擅长的方式（制作卓越的软件）来做点实在的事，而非让它只停留在口头说说。为聋人，我们做了“心声”，希望可以对大家的生活有帮助。
+    </string>
+    <string name="about_us_more">如果想了解我们的团队，或者捐助我们继续优化这款软件，可以查看http://xinsheng.im。</string>
+    <string name="powered_by">Powered by Thoughtworks\n姜鹏、付莹、王琰、朱晨</string>
 </resources>

@@ -18,6 +18,11 @@
                     android:entryValues="@array/voiceValues"/>
 
     <PreferenceCategory>
+        <Preference android:title="@string/about_us">
+            <intent android:action="android.intent.action.VIEW"
+                    android:targetPackage="com.thoughtworks"
+                    android:targetClass="com.thoughtworks.AboutUsActivity" />
+        </Preference>
         <Preference android:title="@string/feedback_title">
             <intent android:action="android.intent.action.VIEW"
                     android:data="@string/feedback_link" />
