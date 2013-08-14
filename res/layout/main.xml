@@ -40,16 +40,22 @@
         <Button android:id="@+id/clear_button"
                 android:layout_width="0dip"
                 android:layout_height="fill_parent"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 android:text="@string/clear"
                 android:onClick="clear"
                 />
         <Button android:id="@+id/select_expression_button"
                 android:layout_width="0dip"
                 android:layout_height="fill_parent"
-                android:layout_weight="5"
+                android:layout_weight="3"
                 android:text="@string/select_expression_button"
                 android:onClick="goToExpressionList"
+                />
+        <Button android:id="@+id/read_button"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="4"
+                android:text="@string/click_to_read"
                 />
     </LinearLayout>
     <LinearLayout android:id="@+id/actions"
@@ -61,13 +67,8 @@
                 android:layout_width="0dip"
                 android:layout_height="fill_parent"
                 android:layout_weight="7"
+                android:textSize="22dp"
                 android:text="@string/click_to_talk"
-                />
-        <Button android:id="@+id/read_button"
-                android:layout_width="0dip"
-                android:layout_height="fill_parent"
-                android:layout_weight="3"
-                android:text="@string/click_to_read"
                 />
     </LinearLayout>
 </LinearLayout>
