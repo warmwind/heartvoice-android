@@ -55,7 +55,7 @@ public class MainView extends LinearLayout {
             @Override
             public void run() {
                 if (h > oldh && oldh > 0) {
-                    editText.setTextSize(50);
+                    editText.setTextSize(46);
                     findViewById(R.id.actions).setVisibility(VISIBLE);
                     findViewById(R.id.content_actions).setVisibility(VISIBLE);
                 } else if (h < oldh) {
