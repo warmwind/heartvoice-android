@@ -48,7 +48,7 @@ public class ExpressionActionView extends LinearLayout {
             @Override
             public void run() {
                 if (h > oldh && oldh > 0) {
-                    expressionEditText.setTextSize(50);
+                    expressionEditText.setTextSize(46);
                 } else if (h < oldh) {
                     expressionEditText.setTextSize(20);
                 }
