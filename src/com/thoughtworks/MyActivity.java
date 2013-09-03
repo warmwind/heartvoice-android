@@ -1,8 +1,11 @@
 package com.thoughtworks;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import com.umeng.analytics.MobclickAgent;
 
@@ -10,6 +13,7 @@ public class MyActivity extends Activity {
     private static final int EXPRESSIONS = 1;
     private static final int SETTINGS = 2;
     private MainView mainView;
+    private AudioManager audio;
 
     /**
      * Called when the activity is first created.
@@ -17,6 +21,7 @@ public class MyActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mainView = new MainView(this);
         setContentView(mainView);
     }
@@ -44,6 +49,21 @@ public class MyActivity extends Activity {
     public void onPause() {
         super.onPause();
         MobclickAgent.onPause(this);
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_VOLUME_UP:
+                audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                        AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                return true;
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
+                audio.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                        AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
+                return true;
+            default:
+                return false;
+        }
     }
 
     public void clear(View view){
