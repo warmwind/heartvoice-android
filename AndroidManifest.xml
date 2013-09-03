@@ -6,28 +6,34 @@
     <uses-sdk android:minSdkVersion="10"/>
     <application android:label="@string/app_name"
                  android:theme="@android:style/Theme.Light.NoTitleBar"
-                 android:icon="@drawable/icon">
+                 android:icon="@drawable/icon"
+                 >
         <activity android:name="MyActivity"
                   android:windowSoftInputMode="stateHidden|adjustResize"
-                  android:label="@string/app_name">
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity android:name=".UsefulExpressionListActivity"
-                  android:label="@string/useful_expressions">
+                  android:label="@string/useful_expressions"
+                  android:screenOrientation="portrait">
         </activity>
         <activity android:name=".SettingsActivity"
-                  android:label="@string/settings">
+                  android:label="@string/settings"
+                  android:screenOrientation="portrait">
         </activity>
 
         <activity android:name=".UsefulExpressionActionActivity"
                   android:label="@string/expressions_actions"
-                  android:windowSoftInputMode="stateHidden|adjustResize">
+                  android:windowSoftInputMode="stateHidden|adjustResize"
+                  android:screenOrientation="portrait">
         </activity>
         <activity android:name=".AboutUsActivity"
-                  android:label="@string/about_us">
+                  android:label="@string/about_us"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
