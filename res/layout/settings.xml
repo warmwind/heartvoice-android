@@ -20,8 +20,8 @@
     <PreferenceCategory>
         <Preference android:title="@string/about_us">
             <intent android:action="android.intent.action.VIEW"
-                    android:targetPackage="com.thoughtworks"
-                    android:targetClass="com.thoughtworks.AboutUsActivity" />
+                    android:targetPackage="com.HeartVoice"
+                    android:targetClass="com.HeartVoice.AboutUsActivity" />
         </Preference>
         <Preference android:title="@string/feedback_title">
             <intent android:action="android.intent.action.VIEW"
