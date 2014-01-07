@@ -20,6 +20,9 @@ public class MyActivity extends Activity {
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+        }
         super.onCreate(savedInstanceState);
         audio = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mainView = new MainView(this);

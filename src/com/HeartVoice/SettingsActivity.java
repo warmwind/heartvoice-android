@@ -1,5 +1,6 @@
 package com.HeartVoice;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
@@ -22,6 +23,20 @@ public class SettingsActivity extends PreferenceActivity implements SharedPrefer
         ListPreference listPref = (ListPreference) findPreference(KEY_DEFAULT_VOICE);
         if(listPref.getEntry() != null){
             listPref.setSummary(listPref.getEntry());
+        }
+
+        Preference exitApp = findPreference("exitApp");
+        if(exitApp != null) {
+            exitApp.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener(){
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    Intent intent = new Intent(getApplicationContext(), MyActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.putExtra("EXIT", true);
+                    startActivity(intent);
+                    return true;
+                }
+            });
         }
     }
 
